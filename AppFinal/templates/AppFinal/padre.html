@@ -1,0 +1,97 @@
+<html>
+
+<head>
+
+    {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'AppFinal/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link href="{% static 'AppFinal/css/gestion.css' %}" rel="stylesheet">
+</head>
+
+<body>
+   <!--<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">-->
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-3" id="mainNav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Servicio de Mensajeria</a>
+    <div class="navbar-collapse collapse" id="navbarSupportedContent"></div>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+        </li>
+        <li class="nav-item {% if request.path == '/servicios' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Servicios</a>
+        </li>
+        <li class="nav-item {% if request.path == '/tarifario' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'tarifario' %}">tarifario</a>
+        </li>
+        <li class="nav-item {% if request.path == '/cobertura' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'cobertura' %}">cobertura</a>
+        </li>
+        <li class="nav-item {% if request.path == '/contacto' %}active{% endif %} px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">quienes somos</a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav><!--/.navbar -->
+
+
+    <!--Contenido que cambia-->
+    {% block content %}
+
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0">
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	    </p>
+        <p class="m-0 mbt">
+        	<a href="sample.html" class="link">Política de privacidad</a> ·
+        	<a href="sample.html" class="link">Aviso legal</a> ·
+        	<a href="sample.html" class="link">Cookies</a>
+		</p>
+        <p class="m-0 mbt1">&copy; Gestión de Pedidos 2020</p>
+      </div>
+	</footer>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'AppFinal/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'AppFinal/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>
