@@ -1,0 +1,26 @@
+{% extends "AppFinal/navbar.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<p>Resultados de busqueda de: {{nombre}}</p>
+
+{% if contactos %}
+
+<ul>
+{% for contacto in contactos %}
+<p>Se encontro resultados...</p>
+    <li>{{contacto.nombre}}</li>
+{% endfor %}
+</ul>
+
+{% else %}
+
+<p>No se encontraron resultados</p>
+
+{% endif %}
+
+
+
+{% endblock %}

@@ -14,6 +14,9 @@ def tarifario(request):
 def cobertura(request):
     return render(request, "AppFinal/cobertura.html")
 
+def busqueda(request):
+    return render(request,"AppFinal/busqueda.html")
+
 def contacto(request):
     data={
         'form': FormularioContacto
@@ -30,3 +33,15 @@ def contacto(request):
 
     return render(request, "AppFinal/contacto.html", data)
 
+
+def buscar(request):
+    
+    if request.GET["nombre"]:
+        nombre=request.GET['nombre']
+        contactos=Contacto.objects.filter(nombre__icontains=nombre)
+
+        return render(request, "AppFinal/resultadoBusqueda.html", {"contactos": contactos, "nombre": nombre})
+    else:
+
+        respuesta="No enviaste datos"
+    return HttpResponse(respuesta)
