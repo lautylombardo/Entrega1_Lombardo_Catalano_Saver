@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from .forms import FormularioContacto
+from .models import Contacto
 
 
 
@@ -13,4 +15,18 @@ def cobertura(request):
     return render(request, "AppFinal/cobertura.html")
 
 def contacto(request):
-    return render(request, "AppFinal/contacto.html")
+    data={
+        'form': FormularioContacto
+    }
+    if request.method=="POST":
+
+        miFormulario=FormularioContacto(data=request.POST)
+
+        if miFormulario.is_valid():
+            miFormulario.save()
+            data["mensaje"] = "Sus datos fueron enviados con éxito"
+        else:
+            data["form"] = miFormulario
+
+    return render(request, "AppFinal/contacto.html", data)
+

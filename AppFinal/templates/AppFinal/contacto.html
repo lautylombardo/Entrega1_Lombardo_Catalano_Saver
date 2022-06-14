@@ -4,4 +4,37 @@
 
 {% block content %}
 
+    <body>
+        <h1>Contáctanos</h1>
+    
+
+
+        <form action="contacto" method="POST">
+            
+            {% csrf_token %}
+            <!--
+            <p>Nombre: <input type="text" name="nombre"></p>
+
+            <p>Email: <input type="text" name="email"></p>
+
+            <p>Teléfono: <input type="text" name="telefono"></p>
+
+            <p>Domicilio: <input type="text" name="domicilio"></p>
+
+            <p>Mensaje: <textarea name="mensaje" rows="15" cols="45"></textarea></p>
+            -->
+
+            <table>
+
+            {{ form }}
+
+            </table>
+
+            <input type="submit" value="Enviar">
+            
+
+        </form>
+    </body>
+
+
 {% endblock %}

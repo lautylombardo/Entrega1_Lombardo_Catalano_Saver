@@ -1,9 +1,10 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(22, 21, 21, 0.712), rgba(63, 57, 57, 0.74)), url("../img/bg_main.jpg");
+  background: linear-gradient(rgba(250, 248, 248, 0.699), rgba(247, 244, 244, 0.582)), url("../img/bg_main.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  color: rgb(2, 2, 2);
 }
 
 h1,
@@ -20,7 +21,7 @@ p {
 }
 
 .text-faded {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.815);
 }
 
 .site-heading {
